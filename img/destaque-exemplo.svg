@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Imagem de exemplo">
+  <defs>
+    <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d5a40"/>
+      <stop offset="1" stop-color="#0a3424"/>
+    </linearGradient>
+    <linearGradient id="campo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#006c4c"/>
+      <stop offset="1" stop-color="#0a3424"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#ceu)"/>
+  <circle cx="870" cy="300" r="120" fill="#b4d23a" opacity=".9"/>
+  <circle cx="870" cy="300" r="190" fill="none" stroke="#b4d23a" stroke-width="3" opacity=".35"/>
+  <path d="M0 560 C260 470 520 500 760 560 S1100 620 1200 560 V900 H0z" fill="#006c4c"/>
+  <path d="M0 650 C300 580 620 610 900 680 S1150 720 1200 700 V900 H0z" fill="url(#campo)"/>
+  <g stroke="#b4d23a" stroke-width="3" fill="none" opacity=".45">
+    <path d="M-40 900 Q300 700 640 900"/>
+    <path d="M140 900 Q480 720 820 900"/>
+    <path d="M320 900 Q660 740 1000 900"/>
+    <path d="M500 900 Q840 760 1180 900"/>
+  </g>
+  <rect x="80" y="80" width="430" height="64" rx="32" fill="#f4f1e8"/>
+  <text x="295" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#0a3424" letter-spacing="2">IMAGEM DE EXEMPLO</text>
+  <text x="80" y="200" font-family="Arial, sans-serif" font-size="26" fill="#f4f1e8" opacity=".85">Substitua em dados/tema.js → imagem</text>
+</svg>

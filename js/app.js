@@ -81,22 +81,23 @@
     var lista = document.getElementById("contato-lista");
     var c = info.contato || {};
     var itens = [
-      { rotulo: "E-mail", valor: texto(c.email), href: texto(c.email) && "mailto:" + texto(c.email).replace(/[\[\]]/g, "") },
-      { rotulo: "Telefone", valor: texto(c.telefone), href: texto(c.telefone) && "tel:" + texto(c.telefone).replace(/[^\d+]/g, "") },
-      { rotulo: "Endereço", valor: texto(c.endereco), href: "" },
-      { rotulo: "Site", valor: texto(c.site).replace(/^https?:\/\//, "").replace(/\/$/, ""), href: texto(c.site) }
+      { rotulo: "Telefone", icone: "telefone", valor: texto(c.telefone), href: texto(c.telefone) && "tel:" + texto(c.telefone).replace(/[^\d+]/g, "") },
+      { rotulo: "Site", icone: "site", valor: texto(c.site).replace(/^https?:\/\//, "").replace(/\/$/, ""), href: texto(c.site) },
+      { rotulo: "E-mail", icone: "email", valor: texto(c.email), href: texto(c.email) && "mailto:" + texto(c.email).replace(/[\[\]]/g, "") },
+      { rotulo: "Endereço", icone: "local", valor: texto(c.endereco), href: "" }
     ];
     itens.forEach(function (item) {
       if (!item.valor) return;
-      var li = el("li");
-      li.appendChild(el("span", "contato-rotulo", item.rotulo));
+      var li = el("li", "contato-item contato-" + item.icone);
+      var alvo = item.href ? el("a", "contato-valor") : el("span", "contato-valor");
+      alvo.appendChild(criarIcone(item.icone, "contato-icone"));
+      alvo.appendChild(el("span", "visualmente-oculto", item.rotulo + ": "));
+      alvo.appendChild(el("span", "", item.valor));
       if (item.href) {
-        var a = el("a", "contato-valor", item.valor);
-        prepararLink(a, linkSeguro(item.href));
-        li.appendChild(a);
-      } else {
-        li.appendChild(el("span", "contato-valor", item.valor));
+        prepararLink(alvo, linkSeguro(item.href));
+        if (ehExterno(alvo.href)) alvo.appendChild(el("span", "visualmente-oculto", " (abre em nova aba)"));
       }
+      li.appendChild(alvo);
       lista.appendChild(li);
     });
     document.getElementById("contato").hidden = lista.children.length === 0;
@@ -153,9 +154,10 @@
   }
 
   /* ---------- Redes sociais ---------- */
-  function criarIcone(nome) {
+  function criarIcone(nome, classe) {
     var svgNS = "http://www.w3.org/2000/svg";
     var svg = document.createElementNS(svgNS, "svg");
+    if (classe) svg.setAttribute("class", classe);
     svg.setAttribute("viewBox", "0 0 24 24");
     svg.setAttribute("aria-hidden", "true");
     svg.setAttribute("focusable", "false");
