@@ -33,5 +33,5 @@ window.SITE_TEMA = {
     "de boné e colete do SENAR, de braços cruzados no campo. Inscrições gratuitas de 05/11 a 13/11.",
 
   botaoTexto: "Inscreva-se",
-  botaoLink: "https://cnabrasil.org.br/Senar/processo-seletivo"
+  botaoLink: "https://cnabrasil.org.br/senar/processo-seletivo"
 };
