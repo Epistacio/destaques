@@ -16,7 +16,7 @@ window.SITE_INFO = {
   chamadaRedes: "Acompanhe nas redes",
   textoRedes: "",
 
-  instituicao: "Serviço Nacional de Aprendizagem Rural do Tocantins",
+  instituicao: "Serviço Nacional de Aprendizagem Rural - AR-TO",
   rodape:
     "Cultivamos crescimento sustentável, unindo forças e estabelecendo parcerias. " +
     "Com metodologia inovadora, semeamos saberes e promovemos cidadania, qualidade " +
